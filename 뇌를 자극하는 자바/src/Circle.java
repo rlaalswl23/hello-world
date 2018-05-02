@@ -12,31 +12,41 @@ public class Circle {
      public int radius;
      public String name;
      
-   //¸Å°³º¯¼ö ¾ø´Â »ı¼ºÀÚ
+   //ë§¤ê°œë³€ìˆ˜ ì—†ëŠ” ìƒì„±ì
      public Circle() { 
     	radius = 1;
     	name = "";
     
      }
      
-     // ¸Å°³º¯¼ö¸¦ °¡Áø »ı¼ºÀÚ
+     // ë§¤ê°œë³€ìˆ˜ë¥¼ ê°€ì§„ ìƒì„±ì
      public Circle(int r, String n) {
     	 radius = r;
     	 name = n;
      }
      
-     // ¸Ş¼Òµå
+     // ë©”ì†Œë“œ
 	public double getArea() {
 		return 3.14 * radius * radius;
 	}
 	
-	// ¸ŞÀÎ¸Ş¼Òµå
+	// ë©”ì¸ë©”ì†Œë“œ
 	public static void main(String[] args) {
 		
-		Circle pizza = new Circle(10, "ÀÚ¹ÙÇÇÀÚ");
-		double area = pizza.getArea();
-		System.out.println(pizza.name + "ÀÇ ¸éÀûÀº" + area);
+		Circle pizza = new Circle(10, "ìë°”í”¼ì");
+		double pizza_area = pizza.getArea();
+		System.out.println(pizza.name + "ì˜ ë©´ì ì€" + pizza_area);
 
+/*
+		Circle donut = new Circle();
+		donut.radius = 2;
+		donut.name = "ìë°”ë„ë„›";
+		
+		double donut_area = donut.getArea();
+		System.out.println(donut.name + "ì˜ ë©´ì ì€" + donut_area);
+		System.out.println(pizza.name + "ì˜ ë©´ì ì€" + pizza_area);
+*/
+		
 	}
 
 }
