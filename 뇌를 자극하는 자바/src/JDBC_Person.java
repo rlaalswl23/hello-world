@@ -51,7 +51,11 @@ class JDBC_Person {
 	
     public static void main(String args[]) {
     	
-    	Person[] persons = new Person[3]; // 배열객체
+    	Person[] persons;
+    	
+    	persons = new Person[7]; // 배열객체
+    	
+    	System.out.println("persons:" + persons);
     	
     	for(int i = 0; i < persons.length; i++) {
     		persons[i] = new Person(); // 생성자 호출하여 배열 레퍼런스 대입
@@ -106,7 +110,7 @@ class JDBC_Person {
         	// 2단계: JDBC드라이버를 로드한다.
             Class.forName("com.mysql.jdbc.Driver");
             // 3단계: 드라이버매니져 클래스는 getConnection메소드로 DB를 연결한다.
-            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql", "root", "12345");
+            conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8", "root", "12345");
             System.out.println("데이터베이스에 접속했습니다.");
             
             // 커넥션 객체가 Statement 객체를 생성
@@ -146,6 +150,10 @@ class JDBC_Person {
             
             //System.out.println(jumincd + "---" + pname + "----" + gender + "-----" + age);
         }
+    	catch(ArrayIndexOutOfBoundsException arye) {
+    		System.out.println("배열객체 용량초과 index:" + 
+    	            arye.getMessage());
+    	}
         catch (ClassNotFoundException cnfe) {
             System.out.println("해당 클래스를 찾을 수 없습니다." + 
                                cnfe.getMessage());
