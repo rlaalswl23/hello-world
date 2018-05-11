@@ -1,0 +1,4 @@
+배열 수 초과
+
+Exception in thread "main" java.lang.ArrayIndexOutOfBoundsException: 3
+	at ArrayList_Test.main(ArrayList_Test.java:18)
