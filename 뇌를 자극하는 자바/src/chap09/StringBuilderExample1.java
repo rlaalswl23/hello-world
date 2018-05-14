@@ -4,6 +4,8 @@ public class StringBuilderExample1 {
 
 	public static void main(String[] args) {
 		StringBuilder sb = new StringBuilder("역사를 하노라고 맨땅을 파다가 ");
+		//StringBuilder sb = new StringBuilder("역사를 ");
+		//sb.ensureCapacity(50);
 		
 		System.out.println(sb.capacity());
 		
@@ -20,6 +22,9 @@ public class StringBuilderExample1 {
 		
 		sb.replace(20,  21, "고인돌");
 		System.out.println(sb);
+		
+		sb.trimToSize();
+		System.out.println(sb.capacity());
 		
 /*		sb.reverse();
 		System.out.println(sb);
