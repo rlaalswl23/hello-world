@@ -20,11 +20,7 @@ public class Exercise9_6 {
 		for(int i = 1; i <= 10; i++) {
 			
 			int randomValue = random.nextInt(2);
-			boolean randValue = random.nextBoolean();
 			
-			if(randValue)
-				frontCount++;
-			    System.out.print("앞면  ");
 			if(randomValue == 0) {
 				frontCount++;
 				System.out.print("앞면  ");
@@ -33,7 +29,7 @@ public class Exercise9_6 {
 				System.out.print("뒷면  ");
 			}
 			System.out.println(randomValue);
-			System.out.println(randValue);
+			
 		}
 		System.out.println("동전앞면:" + frontCount + "   " + "동전뒷면:" + backCount);
 	}
