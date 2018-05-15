@@ -7,6 +7,7 @@ package chap09;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.GregorianCalendar;
 import java.text.*;
 
 public class After100Days {
@@ -29,6 +30,11 @@ public class After100Days {
 		String date = dateFormat.format(calendar.getTime());
 		
 		System.out.println(date);
+		
+/*      GregorianCalendar gcalendar = new GregorianCalendar();
+		gcalendar.add(gcalendar.DATE, 100);
+		System.out.println(gcalendar.getTime());
+*/
 		
 		//System.out.println(dateFormat.format(calendar.getTime()));
 		
