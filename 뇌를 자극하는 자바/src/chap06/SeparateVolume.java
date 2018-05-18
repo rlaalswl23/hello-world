@@ -8,6 +8,7 @@ public class SeparateVolume implements Lendable {
 	String borrower;     // 대출인
 	String checkOutDate; // 대출일
 	byte state;          // 대출상태
+	
 	                   //"863?774개",        "개미",     "베르베르"
 	SeparateVolume(String requestNo, String bookTitle, String writer) {
 		//super(); // object();

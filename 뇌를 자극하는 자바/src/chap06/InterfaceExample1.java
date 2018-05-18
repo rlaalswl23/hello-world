@@ -4,8 +4,7 @@ class InterfaceExample1 {
 
 	public static void main(String[] args) {
 		
-		SeparateVolume obj1 = new SeparateVolume("863?774개", "개미", "베르베르");
-		
+		SeparateVolume obj1 = new SeparateVolume("863?774개", "개미", "베르베르"); // 객체생성시 멤버필드(변수) 값을 셋팅	
 		AppCDInfo obj2 = new AppCDInfo("2005-7001", "Redhat Fedora");
 		
 		obj1.checkOut("김영숙", "20060315");
