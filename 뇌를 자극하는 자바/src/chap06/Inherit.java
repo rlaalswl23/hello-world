@@ -1,7 +1,7 @@
 package chap06;
 
 // 슈퍼클래스, 부모클래스
-class Person{
+abstract class Person{
 	int money;
 	
 	public Person() {
@@ -15,6 +15,8 @@ class Person{
 		System.out.println("부모클래스에 Person(int money)생성자 호출");
 	}
 	
+	abstract void displayHello();
+	
 	public void displayMoney() {
 		System.out.println("재산:" + money);
 		
@@ -26,8 +28,23 @@ class Child extends Person{
 	
 	public Child() {
 		System.out.println("자식클래스에 기본생성자 Child() 호출");
-		super.displayMoney(); // 부모클래스에 메소드 호출
+		super.displayMoney(); // 부모클래스에 메소드 호출 
 	}
+
+	@Override
+	void displayHello() {
+
+       System.out.println("안녕하세요");	
+	}
+}
+
+class USAChild extends Person{
+
+	@Override
+	void displayHello() {
+
+        System.out.println("Hi~!");	
+	}	
 }
 
 public class Inherit {
@@ -37,7 +54,15 @@ public class Inherit {
 		//Person person = new Person(1000000000);
 		//System.out.println("재산:" + person.money);
 		
-        Child child = new Child();
+        Person person = new Child();
+        person.displayHello();
+        
+        person = new USAChild();
+        person.displayHello();
+        
+        //child.displayHello();
+        
+        //Person person = new Child();
         
         //child.displayMoney();
         //System.out.println(child.money);   

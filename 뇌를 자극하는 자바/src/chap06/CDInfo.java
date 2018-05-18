@@ -9,6 +9,8 @@ public class CDInfo {
 		super();
 		this.registerNo = registerNo;
 		this.title = title;
+		
+		System.out.println("========CDInfo(String registerNo, String title)");
 	}
 	
 

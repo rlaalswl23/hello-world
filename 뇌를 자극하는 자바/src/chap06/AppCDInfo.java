@@ -5,10 +5,14 @@ public class AppCDInfo extends CDInfo implements Lendable {
 	String borrower;      // 대출인
 	String checkOutDate;  // 대출일
 	byte state;           // 대출상태
-	AppCDInfo(String registerNo, String title) {
+	
+	
+	public AppCDInfo(String registerNo, String title) {
 		super(registerNo, title);
+		System.out.println("========AppCDInfo(String registerNo, String title)");
 	}
 	public void checkOut(String borrower, String date) {
+		System.out.println("========checkOut(String borrower, String date)");
 		   if(state != 0)
 			   return;
 		   
@@ -21,6 +25,7 @@ public class AppCDInfo extends CDInfo implements Lendable {
 }
 	@Override
 	public void checkIn() {    // 반납한다
+		System.out.println("checkIn()");
 		this.borrower = null;
 		this.checkOutDate = null;
 		this.state = 0;
