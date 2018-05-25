@@ -5,6 +5,10 @@ import java.awt.Container;
 import java.awt.Dimension;
 import java.awt.TextField;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -35,8 +39,39 @@ public class WindowExample2 {
 		container.add(label, BorderLayout.SOUTH);
 		//container.add(imgLabel, BorderLayout.NORTH);
 		
-		ActionListener listener = new ConfirmButtonActionListener(text, label);
-		button.addActionListener(listener);
+		//ActionListener listener = new ConfirmButtonActionListener(text, label);
+		//button.addActionListener(listener);
+		button.addActionListener(new ConfirmButtonActionListener(text, label));
+		text.addActionListener(new ConfirmButtonActionListener(text, label));
+		
+		container.setFocusable(true);               // 컨테이너에 포커스를 설정
+		
+		text.addFocusListener(new FocusListener() {
+			public void focusGained(FocusEvent e) { // 텍스트필드가 포거스를 얻을 때
+				text.setText("");                   // 이름을 입력하세요. 문자열 삭제
+				
+			}
+
+			public void focusLost(FocusEvent e) { }
+		});
+		
+		text.addKeyListener(new KeyListener() {
+			@Override
+			public void keyTyped(KeyEvent e) { }
+			
+			@Override
+			public void keyReleased(KeyEvent e) { }
+			
+			@Override
+			public void keyPressed(KeyEvent e) {
+				System.out.println("keyPressed");
+				
+				if(e.getKeyCode() == KeyEvent.VK_ENTER) {
+					System.out.println("VK_ENTER");
+				}
+				
+			}
+		});
 		
 		//button.requestFocusInWindow();
 		//text.setFocusable(false); // 포커스 해제
