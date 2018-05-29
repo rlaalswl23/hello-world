@@ -71,7 +71,7 @@ class WindowExample8 {
         
         try {
         	
-        	jdbcManager.DBConnection("com.mysql.jdbc.Driver","jdbc:mysql://localhost:3306/mysql", "root", "12345");
+        	jdbcManager.DBConnection("com.mysql.jdbc.Driver","jdbc:mysql://localhost:3306/mysql?useUnicode=true&characterEncoding=utf8", "root", "12345");
         	System.out.println("데이터베이스에 접속했습니다.");
         	frame.setTitle("참가자 명단 프로그램 - DB접속 성공");
         	
