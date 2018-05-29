@@ -17,3 +17,7 @@
                                       
   // 4단계: DB연결을 종료한다.
     conn.close();
+    
+    
+    select 문 -> executeQuery();
+    insert, update, delete 문 -> excuteUpdate(); 
