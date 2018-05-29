@@ -18,10 +18,20 @@ public class RemoveActionListener implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		int row = table.getSelectedRow();
+		
 		if (row == -1)
 			return;
-		DefaultTableModel model = (DefaultTableModel)table.getModel();
-		model.removeRow(row);
+		DefaultTableModel model = (DefaultTableModel) table.getModel();
+		
+		/////// 삭제될 이름 ///////
+		Object name = table.getValueAt(row, 0);
+		String deleteName = name.toString();
+		System.out.println(deleteName);
+		////////////////////////////////
+		
+		model.removeRow(row); // 선택된 행을 삭제
+		
+		
 	}
 	
 }
