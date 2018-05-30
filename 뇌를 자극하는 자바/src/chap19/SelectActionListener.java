@@ -17,6 +17,7 @@ public class SelectActionListener implements ActionListener {
 	JTable table;
 	JDBC_Manager jdbcManager;
 	ResultSet rs;
+	
 	// 생성자
 	public SelectActionListener(JDBC_Manager jdbcManager, JTable table) {
 		super();

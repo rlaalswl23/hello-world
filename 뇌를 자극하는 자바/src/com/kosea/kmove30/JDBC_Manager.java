@@ -36,21 +36,54 @@ public class JDBC_Manager {
 	
 	// query - "select pname, age, gender from person"
 	public ResultSet SelectTable(String query) throws Exception{
+		System.out.println("query - " + query);
 		stmt = conn.createStatement();           
 		rs = stmt.executeQuery(query);
+		
 		return rs;
 	}
+	
+	// query - "INSERT INTO person (pname, age, gender) values('kang' ,	40, 'm');
+	public void insertTable(String[] arr) throws Exception{ 
+		
+		String name   = arr[0]; // 이름
+		String age    = arr[1]; // 나이
+		String gender = arr[2]; // 성별
+		
+		String query = "INSERT INTO person (pname, age, gender) values"
+				+ "('" + name + "'," + age + ",'" + gender + "'" + ")";
+		System.out.println("query - " + query);
+		stmt = conn.createStatement();
+		int insertCount = stmt.executeUpdate(query);
+		
+		if (insertCount > 0)
+			System.out.println(insertCount + "건이 삽입되었습니다.");
+		
+	}
+	
+    // query - "update person set age = 42 where pname = 'kang';
+	public void updateTable(String name, String age) throws Exception{
+		String query = "update person set age = " + age +
+				" where pname = '"+ name + "'";	
+		System.out.println("query - " + query);
+		stmt = conn.createStatement();
+		int updateCount = stmt.executeUpdate(query);
+		
+		if (updateCount > 0)
+	       	System.out.println(updateCount + "건이 수정되었습니다.");
+		}
+	
 	// query - "delete from person where pname = '홍길동' ";
 	public void deleteTable(String deleteName) throws Exception{
 		String query = "delete from person where pname = '" + deleteName + "'"; 
+		System.out.println("query - " + query);
 		stmt = conn.createStatement();
 		int deleteCount = stmt.executeUpdate(query);
 		
 		if (deleteCount > 0)
-		System.out.println(deleteCount + "건이 삭제되었습니다.");
+	       	System.out.println(deleteCount + "건이 삭제되었습니다.");
 	}
-	
-	
+
 	// DB 연결해제
 	public void DBClose() throws Exception{
 		conn.close();
