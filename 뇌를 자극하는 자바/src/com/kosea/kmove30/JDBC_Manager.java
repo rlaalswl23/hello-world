@@ -50,6 +50,10 @@ public class JDBC_Manager {
 		String age    = arr[1]; // 나이
 		String gender = arr[2]; // 성별
 		
+		// 콤보박스에 '남'을 선택하면 -> "m" 
+		//            '여'를 선택하면 -> "f"
+		gender = gender.equals("남")?"m" : "f";
+		
 		String query = "INSERT INTO person (pname, age, gender) values"
 				+ "('" + name + "'," + age + ",'" + gender + "'" + ")";
 		System.out.println("query - " + query);
@@ -57,8 +61,7 @@ public class JDBC_Manager {
 		int insertCount = stmt.executeUpdate(query);
 		
 		if (insertCount > 0)
-			System.out.println(insertCount + "건이 삽입되었습니다.");
-		
+	    System.out.println(insertCount + "건이 삽입되었습니다.");
 	}
 	
     // query - "update person set age = 42 where pname = 'kang';
