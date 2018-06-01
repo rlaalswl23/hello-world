@@ -38,7 +38,7 @@ public class JDBC_Manager {
 	public ResultSet SelectTable(String query) throws Exception{
 		System.out.println("query - " + query);
 		stmt = conn.createStatement();           
-		rs = stmt.executeQuery(query);
+		rs = stmt.executeQuery(query); // rs = stmt.executeQuery(select pname, age, gender from person);
 		
 		return rs;
 	}

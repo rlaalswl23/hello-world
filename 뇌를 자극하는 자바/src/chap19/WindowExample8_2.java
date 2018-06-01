@@ -18,8 +18,10 @@ import com.kosea.kmove30.JDBC_Manager;
 
 class WindowExample8_2 {
 	
-    public static void main(String[] args) {
-    
+	
+	public WindowExample8_2() {
+		
+
     	// DB관리(연결, 조회, 삭제, 추가 클래스) 
     	JDBC_Manager jdbcManager = new JDBC_Manager();
     	
@@ -89,5 +91,12 @@ class WindowExample8_2 {
 			System.out.println(e.getMessage());
 			frame.setTitle("참가자 명단 프로그램 - DB접속 실패");
 		}
+    }
+		
+		
+	
+	
+	
+    public static void main(String[] args) {
     }
 }
