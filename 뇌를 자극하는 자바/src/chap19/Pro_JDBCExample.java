@@ -31,10 +31,10 @@ public static void main(String args[]) {
 		props.load(new java.io.BufferedInputStream(fis));
 
 		// 드라이버 읽기
-		driver   = props.getProperty("jdbc.drive");
-		url      = props.getProperty("jdbc.url");
-		username = props.getProperty("jdbc.username");
-		password = props.getProperty("jdbc.password");
+		driver   = props.getProperty("drive");
+		url      = props.getProperty("url");
+		username = props.getProperty("username");
+		password = props.getProperty("password");
 	} catch (Exception e) {
         e.printStackTrace();
 	}
@@ -52,7 +52,7 @@ public static void main(String args[]) {
     		
             // 3단계: 드라이버매니져 클래스는 getConnection메소드로 DB를 연결한다.
             conn = DriverManager.getConnection(url, username, password);
-            System.out.println("DB접속.");
+            System.out.println("DB 접속성공.");
             
             // 4단계: DB연결을 종료한다.
             conn.close();
